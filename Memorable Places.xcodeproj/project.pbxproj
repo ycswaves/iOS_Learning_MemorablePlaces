@@ -13,6 +13,8 @@
 		04C658C01AD100E300588BBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C658BF1AD100E300588BBA /* Images.xcassets */; };
 		04C658C31AD100E400588BBA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C658C11AD100E400588BBA /* LaunchScreen.xib */; };
 		04C658CF1AD100E400588BBA /* Memorable_PlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C658CE1AD100E400588BBA /* Memorable_PlacesTests.swift */; };
+		04C658D91AD1034500588BBA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C658D81AD1034500588BBA /* TableViewController.swift */; };
+		04C658DB1AD104C900588BBA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C658DA1AD104C900588BBA /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		04C658C81AD100E400588BBA /* Memorable PlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Memorable PlacesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C658CD1AD100E400588BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C658CE1AD100E400588BBA /* Memorable_PlacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memorable_PlacesTests.swift; sourceTree = "<group>"; };
+		04C658D81AD1034500588BBA /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		04C658DA1AD104C900588BBA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C658DB1AD104C900588BBA /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +64,7 @@
 		04C658AA1AD100E300588BBA = {
 			isa = PBXGroup;
 			children = (
+				04C658DA1AD104C900588BBA /* CoreLocation.framework */,
 				04C658B51AD100E300588BBA /* Memorable Places */,
 				04C658CB1AD100E400588BBA /* Memorable PlacesTests */,
 				04C658B41AD100E300588BBA /* Products */,
@@ -83,6 +89,7 @@
 				04C658BF1AD100E300588BBA /* Images.xcassets */,
 				04C658C11AD100E400588BBA /* LaunchScreen.xib */,
 				04C658B61AD100E300588BBA /* Supporting Files */,
+				04C658D81AD1034500588BBA /* TableViewController.swift */,
 			);
 			path = "Memorable Places";
 			sourceTree = "<group>";
@@ -213,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C658BB1AD100E300588BBA /* ViewController.swift in Sources */,
+				04C658D91AD1034500588BBA /* TableViewController.swift in Sources */,
 				04C658B91AD100E300588BBA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
