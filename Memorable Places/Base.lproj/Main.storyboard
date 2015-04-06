@@ -51,6 +51,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zed-cY-PSL" id="7Mj-C1-VPX">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="YYs-44-1Cp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -61,7 +64,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="Bs3-Uw-cul">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="d5C-ns-6YF">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="show" id="JmQ-Pf-sU8"/>
+                                <segue destination="vXZ-lx-hvc" kind="show" identifier="newPlace" id="JmQ-Pf-sU8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -87,4 +90,7 @@
             <point key="canvasLocation" x="-56" y="600"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JmQ-Pf-sU8"/>
+    </inferredMetricsTieBreakers>
 </document>

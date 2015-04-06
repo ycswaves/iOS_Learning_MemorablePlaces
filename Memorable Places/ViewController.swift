@@ -20,8 +20,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager = CLLocationManager()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
+        
+        if activePlace == -1 {
+            manager.requestWhenInUseAuthorization()
+            manager.startUpdatingLocation()
+        } else {
+            let latitude = NSString(string: userPlaces[activePlace]["lat"]!).doubleValue
+            let longitude = NSString(string: userPlaces[activePlace]["lon"]!).doubleValue
+            var coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+            mapInit(latitude, lon: longitude)
+            makeAnnote(coordinate, msg: userPlaces[activePlace]["name"]!)
+        }
+        
+        
+        
         
         var uiLongPress = UILongPressGestureRecognizer(target: self, action: "action:")
         uiLongPress.minimumPressDuration = 2.0
@@ -56,11 +68,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if annote == "" {
                     annote = "added \(NSDate())"
                 }
-                println(annote)
-                var annot = MKPointAnnotation()
-                annot.coordinate = newCoord
-                annot.title = annote
-                self.map.addAnnotation(annot)
+                userPlaces.append(["name":annote, "lat":"\(newCoord.latitude)", "lon":"\(newCoord.longitude)"])
+                self.makeAnnote(newCoord, msg: annote)
             })
             
         }
@@ -71,12 +80,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         var userLocation:CLLocation = locations[0] as CLLocation
         var latitude = userLocation.coordinate.latitude
         var longitude = userLocation.coordinate.longitude
+        mapInit(latitude, lon: longitude)
+    }
+    
+    func mapInit(lat: CLLocationDegrees, lon: CLLocationDegrees) {
         var latDelta:CLLocationDegrees = 0.01
         var logDelta:CLLocationDegrees = 0.01
         var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, logDelta)
-        var coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        var coordinate = CLLocationCoordinate2DMake(lat, lon)
         var region:MKCoordinateRegion = MKCoordinateRegionMake(coordinate, span)
         self.map.setRegion(region, animated: true)
+    }
+    
+    func makeAnnote(newCoord: CLLocationCoordinate2D, msg: String) {
+        var annot = MKPointAnnotation()
+        annot.coordinate = newCoord
+        annot.title = msg
+        self.map.addAnnotation(annot)
     }
 
     override func didReceiveMemoryWarning() {
