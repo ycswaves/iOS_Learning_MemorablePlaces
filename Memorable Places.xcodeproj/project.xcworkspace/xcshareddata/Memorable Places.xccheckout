@@ -10,6 +10,8 @@
 	<string>Memorable Places</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>252C88B0C321B5786939767243BA9B06EB58A1AD</key>
+		<string>https://github.com/ycswaves/iOS_Learning_ToDoList.git</string>
 		<key>E588494BD2AAFC0C434BA865498805C9412677F6</key>
 		<string>https://github.com/ycswaves/iOS_Learning_MemorablePlaces.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>Memorable Places.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>252C88B0C321B5786939767243BA9B06EB58A1AD</key>
+		<string>../../../ToDoList</string>
 		<key>E588494BD2AAFC0C434BA865498805C9412677F6</key>
 		<string>../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>E588494BD2AAFC0C434BA865498805C9412677F6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Memorable%20Places</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>252C88B0C321B5786939767243BA9B06EB58A1AD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ToDoList</string>
 		</dict>
 	</array>
 </dict>

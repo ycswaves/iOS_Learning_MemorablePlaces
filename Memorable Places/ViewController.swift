@@ -25,11 +25,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             manager.requestWhenInUseAuthorization()
             manager.startUpdatingLocation()
         } else {
-            let latitude = NSString(string: userPlaces[activePlace]["lat"]!).doubleValue
-            let longitude = NSString(string: userPlaces[activePlace]["lon"]!).doubleValue
+            let latitude = NSString(string: userPlaces.getItem(activePlace)["lat"]!).doubleValue
+            let longitude = NSString(string: userPlaces.getItem(activePlace)["lon"]!).doubleValue
             var coordinate = CLLocationCoordinate2DMake(latitude, longitude)
             mapInit(latitude, lon: longitude)
-            makeAnnote(coordinate, msg: userPlaces[activePlace]["name"]!)
+            makeAnnote(coordinate, msg: userPlaces.getItem(activePlace)["name"]!)
         }
         
         
@@ -68,7 +68,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if annote == "" {
                     annote = "added \(NSDate())"
                 }
-                userPlaces.append(["name":annote, "lat":"\(newCoord.latitude)", "lon":"\(newCoord.longitude)"])
+                userPlaces.addItem(["name":annote, "lat":"\(newCoord.latitude)", "lon":"\(newCoord.longitude)"])
                 self.makeAnnote(newCoord, msg: annote)
             })
             

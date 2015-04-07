@@ -8,17 +8,19 @@
 
 import UIKit
 
-var userPlaces = [Dictionary<String, String>()]
+
 var activePlace = -1
+var userPlaces = PlaceTable()
 
 class TableViewController: UITableViewController {
-
+    
+    @IBOutlet var userTableUI: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if userPlaces.count == 1 {
-            userPlaces.removeAtIndex(0)
-            userPlaces.append(["name":"Taj Mahal","lat":"27.175277","lon":"78.042128"])
+        if userPlaces.getTotal() < 1 {
+            userPlaces.addItem(["name":"Taj Mahal","lat":"27.175277","lon":"78.042128"])
         }
     }
 
@@ -38,14 +40,14 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return userPlaces.count
+        return userPlaces.getTotal()
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
-        cell.textLabel?.text = userPlaces[indexPath.row]["name"]
+        cell.textLabel?.text = userPlaces.getItem(indexPath.row)["name"]
 
         return cell
     }
@@ -69,17 +71,18 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            userPlaces.removeItem(indexPath.row)
+            userTableUI.reloadData()
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+
 
     /*
     // Override to support rearranging the table view.
@@ -105,5 +108,9 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewDidAppear(animated: Bool) {
+        userTableUI.reloadData()
+    }
 
 }

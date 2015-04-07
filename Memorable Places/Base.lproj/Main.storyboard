@@ -68,6 +68,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userTableUI" destination="A1s-rN-ejW" id="RDR-48-meU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALP-q1-cg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
