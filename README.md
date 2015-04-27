@@ -20,9 +20,10 @@ in _Build Phases_, under _Link Binary With Libraries, add _CoreLocation.framewor
 #### Get permission to use user's location
 inside info.plist, add:
 
-|-------------       Key       -----------|--- Type ---|-- Value --|
-|-- NSLocationWhenInUseUsageDescription --|-- String --|-- I need your location --|
-|--   NSLocationAlwaysUsageDescription  --|-- String --|-- I always need your location --|
+|                    Key                      |     Type     |            Value                |
+| ------------------------------------------- |:------------:| ------------------------------- |
+|   **NSLocationWhenInUseUsageDescription**   |   `String`   |   *I need your location*        |
+|   **NSLocationAlwaysUsageDescription**      |   `String`   |   *I always need your location* |
 
 
 ### Create coordinate
